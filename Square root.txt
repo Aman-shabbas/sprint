@@ -1,0 +1,53 @@
+3 is_num_equal_zero
+num:195
+result:0
+is_num_equal_zero:4 num zero set_result_one
+7 num divident
+is_divident_less_2:5 divident two set_rangend
+2 divident two divident
+1 quotient one quotient
+3 is_divident_less_2
+set_rangend:4 quotient two set_result_two
+7 quotient rangend
+2 quotient quotient quotient
+set_rangelen:2 rangend rangestart rangelen
+5 rangelen two set_result_from_rangestart
+1 rangend rangestart rangesum
+is_rangesum_less_two:5 rangesum two set_mid
+2 rangesum two rangesum
+1 quotient one quotient
+3 is_rangesum_less_two
+set_mid:7 quotient mid
+7 num divident
+2 quotient quotient quotient
+is_divident_less_mid:5 divident mid is_quotient_equal_mid
+2 divident mid divident
+1 quotient one quotient
+3 is_divident_less_mid
+is_quotient_equal_mid:4 quotient mid set_result
+is_quotient_less_mid:5 quotient mid set_rangend1
+7 mid rangestart
+2 quotient quotient quotient
+3 set_rangelen
+set_rangend1:7 mid rangend
+2 quotient quotient quotient
+3 set_rangelen
+set_result:7 quotient result
+3 stop
+set_result_from_rangestart:7 rangestart result
+3 stop
+set_result_two:7 two result
+3 stop
+set_result_one:7 one result
+3 stop
+divident:0
+rangestart:1
+rangend:0
+mid:0
+rangesum:0
+rangelen:0
+quotient:0
+one:1
+two:2
+zero:0
+stop:9

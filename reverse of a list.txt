@@ -1,0 +1,31 @@
+3 5
+first_element:63
+length:6
+4 length zero stop
+7 first_element left
+1 first_element length sum
+2 sum one right
+
+check_for_continue:5 right left stop
+7 left left_copy1
+7 left left_copy2
+7 right right_copy1
+7 right right_copy2
+7 left_copy1:0 temp
+7 right_copy1:0 left_copy2:0
+7 temp right_copy2:0
+1 left one left
+2 right one right
+3 check_for_continue
+
+
+last_element:0
+sum:0
+one:1
+temp:0
+left:0
+zero:0
+
+right:0
+stop:9
+1 2 3 4 5 6

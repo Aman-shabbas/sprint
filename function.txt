@@ -1,0 +1,40 @@
+3 program
+
+
+
+one:1
+result:0
+count:0
+multiplicant:0
+multiplier:0
+destination:0
+next_pos:0
+fetch_data:7 start_pos:34 false_cell
+7 false_cell:0 multiplicant
+1 start_pos one start_pos
+7 start_pos false_cell2
+7 false_cell2:0 false_cell3
+7 false_cell3:0 multiplier
+1 start_pos one start_pos
+7 start_pos false_cell4
+7 false_cell4:0 destination
+1 start_pos one start_pos
+7 start_pos false_cell5
+7 false_cell5:0 next_pos
+mult:4 multiplier count ext
+1 result multiplicant result
+1 count one count
+3 mult
+div:5 multiplicant multiplier ext
+2 multiplicant multiplier multiplicant
+1 result one result
+3 div
+
+ext:7 destination des_p
+7 result des_p:0
+7 next_pos next_p
+0 0 result
+3 next_p:0
+0
+
+program:3 96 6 2 0 103 start_pos 3 fetch_data 3 mult 94 95 125 109 0 0 0 116 start_pos 3 fetch_data 3 div 94 95 126 120 9

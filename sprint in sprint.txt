@@ -1,0 +1,178 @@
+3 start
+starting_pos:program
+cur_pos:0
+next_pos:0
+cur_instruction:program
+next_instruction:0
+data1:0
+data2:0
+data3:0
+one:1
+zero:0
+three:3
+four:4
+false_cell:0
+
+start:7 cur_instruction cur_pos
+1 cur_pos one next_pos
+7 cur_pos data_pos1
+7 data_pos1:0 cur_instruction
+3 check_instruction
+
+put:0
+add:1
+sub:2
+jump:3
+equal:4
+lsthn:5
+copy:7
+stop:9
+check_instruction:4 cur_instruction jump do_jump
+4 cur_instruction stop halt
+4 cur_instruction add do_add
+4 cur_instruction copy do_copy
+4 cur_instruction put do_put
+4 cur_instruction sub do_sub
+4 cur_instruction equal do_equal
+4 cur_instruction lsthn do_lsthn
+
+do_jump:7 next_pos data_pos2
+7 data_pos2:0 data1
+1 starting_pos data1 false_cell
+2 false_cell one cur_pos
+7 cur_pos cur_instruction
+7 false_cell next_pos
+3 start
+
+do_add:1 cur_pos three false_cell
+1 cur_pos four next_instruction
+7 false_cell data_pos6
+7 data_pos6:0 data3
+1 starting_pos data3 false_cell
+2 false_cell one save_location
+7 next_pos data_pos4
+7 data_pos4:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos5
+7 data_pos5:0 data2
+1 starting_pos data1 false_cell
+2 false_cell one cur_pos
+7 false_cell next_pos
+7 cur_pos data_pos7
+7 data_pos7:0 data1
+7 next_pos data_pos8
+7 data_pos8:0 data2
+1 cur_pos one cur_pos
+1 next_pos one next_pos
+1 data1 data2 save_location:0
+7 next_instruction cur_instruction
+3 start
+
+do_copy:1 cur_pos three next_instruction
+7 next_pos data_pos9
+7 data_pos9:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos10
+7 data_pos10:0 data2
+1 starting_pos data1 false_cell
+2 false_cell one copy_cell
+1 starting_pos data2 false_cell
+2 false_cell one destination
+7 copy_cell:0 destination:0
+7 next_instruction cur_instruction
+3 start
+
+do_put:1 cur_pos three next_instruction
+7 next_pos data_pos11
+7 data_pos11:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos12
+7 data_pos12:0 data2
+1 starting_pos data2 false_cell
+2 false_cell one put_destination
+7 data1 source
+0 source:0 put_destination:0
+7 next_instruction cur_instruction
+3 start
+
+do_sub:1 cur_pos three false_cell
+1 cur_pos four next_instruction
+7 false_cell data_pos13
+7 data_pos13:0 data3
+1 starting_pos data3 false_cell
+2 false_cell one save_location1
+7 next_pos data_pos14
+7 data_pos14:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos15
+7 data_pos15:0 data2
+1 starting_pos data1 false_cell
+2 false_cell one cur_pos
+7 false_cell next_pos
+7 cur_pos data_pos16
+7 data_pos16:0 data1
+7 next_pos data_pos18
+7 data_pos18:0 data2
+7 next_pos cur_pos
+1 cur_pos one next_pos
+2 data1 data2 save_location1:0
+7 next_instruction cur_instruction
+3 start
+
+destination_cell:0
+do_equal:1 cur_pos four next_instruction
+1 cur_pos three false_cell
+7 false_cell data_pos21
+7 data_pos21:0 data3
+7 next_pos data_pos19
+7 data_pos19:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos20
+7 data_pos20:0 data2
+7 next_pos cur_pos
+1 cur_pos one next_pos
+1 starting_pos data1 false_cell
+2 false_cell one equal1
+1 starting_pos data2 false_cell
+2 false_cell one equal2
+1 starting_pos data3 false_cell
+2 false_cell one destination_cell
+4 equal1:0 equal2:0 jump_equal
+7 next_instruction cur_instruction
+3 start
+jump_equal:7 destination_cell cur_instruction
+3 start
+
+destination_cell1:0
+do_lsthn:1 cur_pos four next_instruction
+1 cur_pos three false_cell
+7 false_cell data_pos22
+7 data_pos22:0 data3
+7 next_pos data_pos23
+7 data_pos23:0 data1
+7 next_pos cur_pos
+1 cur_pos one next_pos
+7 next_pos data_pos24
+7 data_pos24:0 data2
+7 next_pos cur_pos
+1 cur_pos one next_pos
+1 starting_pos data1 false_cell
+2 false_cell one less1
+1 starting_pos data2 false_cell
+2 false_cell one less2
+1 starting_pos data3 false_cell
+2 false_cell one destination_cell1
+5 less1:0 less2:0 jump_less
+7 next_instruction cur_instruction
+3 start
+jump_less:7 destination_cell1 cur_instruction
+3 start
+
+
+halt:9
+program:3 5 5 6 5 3 4 12 7 5 13 9 0

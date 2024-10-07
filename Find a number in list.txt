@@ -1,0 +1,19 @@
+3 7
+first_element:41
+list_length:7
+number_to_find:9
+result:0
+4 list_length zero stop
+7 first_element element
+check_equal:4 element:first_element number_to_find result_to_one
+1 count one count
+4 list_length count stop
+1 element one element
+3 check_equal
+result_to_one:0 1 result
+3 stop
+zero:0
+one:1
+count:0
+stop:9
+4 3 6 7 2 8 1
